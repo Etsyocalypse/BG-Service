@@ -1,5 +1,8 @@
 import React from 'react';
 import axios from 'axios';
+import css from '../../node_modules/bootstrap/dist/css/bootstrap.css';
+import itemInfoCSS from './item-info.css';
+
 import ItemHeading from './ItemHeading/ItemHeading.jsx'
 import ItemInfoPriceOptions from './ItemInfoPriceOptions/ItemInfoPriceOptions.jsx';
 import ItemInfoOrdering from './ItemInfoOrdering/ItemInfoOrdering.jsx';
@@ -86,7 +89,7 @@ class ItemInfoContainer extends React.Component {
 
   componentDidMount(){
     axios.get('http://etsy-poc-item-info.us-east-2.elasticbeanstalk.com/items/1')
-    // axios.get('http://localhost:4321/items/111')
+    // axios.get('http://localhost:4321/items/1')
     .then(res=>{
       console.log(res.data);
       this.setState({item: res.data, loading:false});
@@ -96,7 +99,7 @@ class ItemInfoContainer extends React.Component {
   render() {
     if(this.state.loading){
       return (
-        <div className='loading container'>
+        <div className='item-info-loading container'>
           Loading...
         </div>
       )
@@ -107,14 +110,14 @@ class ItemInfoContainer extends React.Component {
           <ItemHeading
             storeName={this.state.item.storeName || ''}
             storeRating={this.state.item.itemRating || ''}
-            storeReviews={this.state.item.itemReviews || ''}
+            storeReviews={this.state.item.shopTotalSales || ''}
             itemName={this.state.item.itemName || ''}
-            badges={this.state.item.badges || ['bestseller', 'trending']}
+            badges={this.state.item.badges || ['Bestseller', 'Trending']}
           />
           <ItemInfoPriceOptions 
             pricedOptions={this.state.item.pricedOptions || []}
             unpricedOptions={this.state.item.unpricedOptions || []}
-            customOptions={this.state.item.customOptions || []}
+            customOptions={this.state.item.customOptions || ''}
             maxQuantity={this.state.item.maxQuantity || ''}
           />
           <ItemInfoOrdering

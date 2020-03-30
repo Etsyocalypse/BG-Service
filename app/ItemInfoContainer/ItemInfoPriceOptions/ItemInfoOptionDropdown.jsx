@@ -23,7 +23,7 @@ class ItemInfoOptionDropdown extends React.Component{
               <option
                 key={`option${index}`}
                 value={`${itemOpt.value}`}>
-                {itemOpt.optionLabel} {itemOpt.price || ''}
+                {itemOpt.optionLabel} {`(${itemOpt.price})` || ''}
               </option>
             ))}
         </select>

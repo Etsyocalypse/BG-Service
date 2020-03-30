@@ -47,19 +47,31 @@ class ItemInfoPriceOptions extends React.Component{
           )}
       </div>
       {/* custom options */}
-      <div>
-        <label>
-          {this.props.customOptions.label}
-          <div>
-            {this.props.customOptions.note}
-          </div>
-          <textarea cols={40} rows={1} placeholder={this.props.customOptions.default} />
-        </label>
-      </div>
+      {(() => {
+        if(typeof this.props.customOptions==='object'){
+          return (
+            <div>
+              <label>
+                {this.props.customOptions.label}
+                <div>
+                  {this.props.customOptions.note}
+                </div>
+                <textarea cols={40} rows={1} placeholder={this.props.customOptions.default} />
+              </label>
+            </div>
+          )
+        } else {
+          return (
+            <div></div>
+          )
+        }
+      })()}
 
       {/* quantity */}
       <div>
+        <label>
         Quantity
+        </label>
         <select className='item-info-quantity'>
             {[1,2,3,4,5,6,7,8,9,10].map(val=>
               <option key={val}>{val}</option>

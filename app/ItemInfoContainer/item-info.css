@@ -1,0 +1,49 @@
+.item-heading,a {
+    color:inherit;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 28px;
+}
+
+.item-heading,a :hover :focus{
+    color:inherit
+}
+
+.item-heading,span {
+    padding: .25rem
+}
+
+.divider-bar{
+color: lightgray
+}
+
+.item-info-item-name {
+    font-weight: 300;
+    font-size: 26px;
+    line-height: 32px;
+}
+
+.item-info-badges {
+    font-size: 11px;
+    font-weight: bold;
+    min-width: 17px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    /* padding-left: 6px; */
+    padding-right: 6px;    
+}
+
+.item-info-badge{
+    border-radius: 15px;
+    background-color: lightgray;
+    /* margin-left: 6px; */
+    margin-right: 6px;
+    padding-left: 6px;
+    padding-right: 6px;    
+}
+
+.item-info-price-options label {
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 18px;
+}
