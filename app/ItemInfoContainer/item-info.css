@@ -47,3 +47,30 @@ color: lightgray
     font-size: 13px;
     line-height: 18px;
 }
+
+.item-info-ordering button {
+    width: 240px;
+    height: 24px;
+    border-radius: 24px;
+    border-width: 24px;
+    color: white;
+    border-color: black;
+    background-color: black;
+    
+}
+
+.item-info-ordering p {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.5;
+    /* min-height: 48px;
+    min-width: 48px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 18px;
+    padding-right: 18px; */
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    margin-top: -12px;
+}

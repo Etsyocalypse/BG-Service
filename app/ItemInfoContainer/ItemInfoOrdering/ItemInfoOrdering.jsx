@@ -18,7 +18,7 @@ const ItemInfoOrdering = (props)=>{
   
   return (
   <div className='item-info-ordering'>
-  <button className='add-to-cart'>Add To Cart button</button>
+  <button className='add-to-cart'><p>Add To Cart</p></button>
   {props.inserts.map((insert,index)=>(
     <div className='item-order-insert' key={`insert${index}`}>{insertDict[insert]}</div>
   ))}

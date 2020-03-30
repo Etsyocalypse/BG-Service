@@ -31510,40 +31510,44 @@ var ItemHeading = function ItemHeading(props) {
     "div",
     { className: "item-heading" },
     _react2.default.createElement(
-      "span",
-      { className: "item-info-store-name" },
-      props.storeName
-    ),
-    _react2.default.createElement(
-      "span",
-      { className: "divider-bar" },
-      "|"
-    ),
-    _react2.default.createElement(
-      "span",
-      { className: "item-info-store-rating" },
+      "div",
+      { className: "row" },
       _react2.default.createElement(
-        "a",
-        { href: "#reviews" },
+        "span",
+        { className: "item-info-store-name" },
+        props.storeName
+      ),
+      _react2.default.createElement(
+        "span",
+        { className: "divider-bar" },
+        "|"
+      ),
+      _react2.default.createElement(
+        "span",
+        { className: "item-info-store-rating" },
         _react2.default.createElement(
-          "span",
-          null,
-          props.storeReviews,
-          " sales"
-        ),
-        _react2.default.createElement(
-          "span",
-          { className: "divider-bar" },
-          "|"
-        ),
-        _react2.default.createElement(
-          "span",
-          null,
-          _react2.default.createElement(_reactFontawesome.FontAwesomeIcon, { icon: _freeSolidSvgIcons.faStar }),
-          _react2.default.createElement(_reactFontawesome.FontAwesomeIcon, { icon: _freeSolidSvgIcons.faStar }),
-          _react2.default.createElement(_reactFontawesome.FontAwesomeIcon, { icon: _freeSolidSvgIcons.faStar }),
-          _react2.default.createElement(_reactFontawesome.FontAwesomeIcon, { icon: _freeSolidSvgIcons.faStar }),
-          _react2.default.createElement(_reactFontawesome.FontAwesomeIcon, { icon: _freeSolidSvgIcons.faStar })
+          "a",
+          { href: "#reviews" },
+          _react2.default.createElement(
+            "span",
+            null,
+            props.storeReviews,
+            " sales"
+          ),
+          _react2.default.createElement(
+            "span",
+            { className: "divider-bar" },
+            "|"
+          ),
+          _react2.default.createElement(
+            "span",
+            null,
+            _react2.default.createElement(_reactFontawesome.FontAwesomeIcon, { icon: _freeSolidSvgIcons.faStar }),
+            _react2.default.createElement(_reactFontawesome.FontAwesomeIcon, { icon: _freeSolidSvgIcons.faStar }),
+            _react2.default.createElement(_reactFontawesome.FontAwesomeIcon, { icon: _freeSolidSvgIcons.faStar }),
+            _react2.default.createElement(_reactFontawesome.FontAwesomeIcon, { icon: _freeSolidSvgIcons.faStar }),
+            _react2.default.createElement(_reactFontawesome.FontAwesomeIcon, { icon: _freeSolidSvgIcons.faStar })
+          )
         )
       )
     ),
@@ -38848,7 +38852,11 @@ var ItemInfoOrdering = function ItemInfoOrdering(props) {
     _react2.default.createElement(
       'button',
       { className: 'add-to-cart' },
-      'Add To Cart button'
+      _react2.default.createElement(
+        'p',
+        null,
+        'Add To Cart'
+      )
     ),
     props.inserts.map(function (insert, index) {
       return _react2.default.createElement(
@@ -43569,7 +43577,7 @@ module.exports = exported;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(47);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".item-heading,a {\r\n    color:inherit;\r\n    font-weight: 300;\r\n    font-size: 16px;\r\n    line-height: 28px;\r\n}\r\n\r\n.item-heading,a :hover :focus{\r\n    color:inherit\r\n}\r\n\r\n.item-heading,span {\r\n    padding: .25rem\r\n}\r\n\r\n.divider-bar{\r\ncolor: lightgray\r\n}\r\n\r\n.item-info-item-name {\r\n    font-weight: 300;\r\n    font-size: 26px;\r\n    line-height: 32px;\r\n}\r\n\r\n.item-info-badges {\r\n    font-size: 11px;\r\n    font-weight: bold;\r\n    min-width: 17px;\r\n    padding-top: 3px;\r\n    padding-bottom: 3px;\r\n    /* padding-left: 6px; */\r\n    padding-right: 6px;    \r\n}\r\n\r\n.item-info-badge{\r\n    border-radius: 15px;\r\n    background-color: lightgray;\r\n    /* margin-left: 6px; */\r\n    margin-right: 6px;\r\n    padding-left: 6px;\r\n    padding-right: 6px;    \r\n}\r\n\r\n.item-info-price-options label {\r\n    font-weight: 300;\r\n    font-size: 13px;\r\n    line-height: 18px;\r\n}", ""]);
+exports.push([module.i, ".item-heading,a {\r\n    color:inherit;\r\n    font-weight: 300;\r\n    font-size: 16px;\r\n    line-height: 28px;\r\n}\r\n\r\n.item-heading,a :hover :focus{\r\n    color:inherit\r\n}\r\n\r\n.item-heading,span {\r\n    padding: .25rem\r\n}\r\n\r\n.divider-bar{\r\ncolor: lightgray\r\n}\r\n\r\n.item-info-item-name {\r\n    font-weight: 300;\r\n    font-size: 26px;\r\n    line-height: 32px;\r\n}\r\n\r\n.item-info-badges {\r\n    font-size: 11px;\r\n    font-weight: bold;\r\n    min-width: 17px;\r\n    padding-top: 3px;\r\n    padding-bottom: 3px;\r\n    /* padding-left: 6px; */\r\n    padding-right: 6px;    \r\n}\r\n\r\n.item-info-badge{\r\n    border-radius: 15px;\r\n    background-color: lightgray;\r\n    /* margin-left: 6px; */\r\n    margin-right: 6px;\r\n    padding-left: 6px;\r\n    padding-right: 6px;    \r\n}\r\n\r\n.item-info-price-options label {\r\n    font-weight: 300;\r\n    font-size: 13px;\r\n    line-height: 18px;\r\n}\r\n\r\n.item-info-ordering button {\r\n    width: 240px;\r\n    height: 24px;\r\n    border-radius: 24px;\r\n    border-width: 24px;\r\n    color: white;\r\n    border-color: black;\r\n    background-color: black;\r\n    \r\n}\r\n\r\n.item-info-ordering p {\r\n    font-size: 16px;\r\n    font-weight: bold;\r\n    line-height: 1.5;\r\n    /* min-height: 48px;\r\n    min-width: 48px;\r\n    padding-top: 12px;\r\n    padding-bottom: 12px;\r\n    padding-left: 18px;\r\n    padding-right: 18px; */\r\n    position: relative;\r\n    text-align: center;\r\n    vertical-align: middle;\r\n    margin-top: -12px;\r\n}", ""]);
 // Exports
 module.exports = exports;
 
