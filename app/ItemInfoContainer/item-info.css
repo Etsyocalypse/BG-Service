@@ -1,4 +1,4 @@
-.item-heading,a {
+/* .item-heading,a {
     color:inherit;
     font-weight: 300;
     font-size: 16px;
@@ -29,14 +29,12 @@ color: lightgray
     min-width: 17px;
     padding-top: 3px;
     padding-bottom: 3px;
-    /* padding-left: 6px; */
     padding-right: 6px;    
 }
 
 .item-info-badge{
     border-radius: 15px;
     background-color: lightgray;
-    /* margin-left: 6px; */
     margin-right: 6px;
     padding-left: 6px;
     padding-right: 6px;    
@@ -63,14 +61,8 @@ color: lightgray
     font-size: 16px;
     font-weight: bold;
     line-height: 1.5;
-    /* min-height: 48px;
-    min-width: 48px;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    padding-left: 18px;
-    padding-right: 18px; */
     position: relative;
     text-align: center;
     vertical-align: middle;
     margin-top: -12px;
-}
+} */

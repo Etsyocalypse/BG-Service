@@ -114,7 +114,8 @@ class ItemInfoContainer extends React.Component {
             itemName={this.state.item.itemName || ''}
             badges={this.state.item.badges || ['Bestseller', 'Trending']}
           />
-          <ItemInfoPriceOptions 
+          <ItemInfoPriceOptions
+            singlePrice={this.state.item.singlePrice || 0} 
             pricedOptions={this.state.item.pricedOptions || []}
             unpricedOptions={this.state.item.unpricedOptions || []}
             customOptions={this.state.item.customOptions || ''}

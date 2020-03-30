@@ -5,7 +5,7 @@ class ItemInfoPriceOptions extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      priceString: '', // priceAdder, with plus sign if lowAdd/highAdd populated
+      priceString: this.props.pricedOptions[0] || this.props.singlePrice || "0.00", // priceAdder, with plus sign if lowAdd/highAdd populated
       lowAdd: 0,
       highAdd: 0,
       priceAdder: 0,
@@ -24,8 +24,10 @@ class ItemInfoPriceOptions extends React.Component{
     <div className='item-info-price-options'>
 
       {/* price */}
-      <div className='item-info-price'>{this.state.priceString}</div>    
-      {/* price options */}
+      <div className="d-flex align-items-center">
+        <h3 style={{marginBottom: 0}} className="mr-2">${this.state.priceString}</h3>
+        <p style={{marginBottom: 0}}><del>{this.props.singlePrice*1.5}</del></p>
+      </div>      {/* price options */}
       <div>
         {/* {console.log(this.props)} */}
         {this.props.pricedOptions.map((optionGroup, index)=>
@@ -68,11 +70,9 @@ class ItemInfoPriceOptions extends React.Component{
       })()}
 
       {/* quantity */}
-      <div>
-        <label>
-        Quantity
-        </label>
-        <select className='item-info-quantity'>
+      <div className="form-group">
+        <label>Quantity</label>
+        <select className='item-info-quantity form-control'>
             {[1,2,3,4,5,6,7,8,9,10].map(val=>
               <option key={val}>{val}</option>
               )}
