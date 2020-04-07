@@ -76,8 +76,8 @@ class ItemInfoContainer extends React.Component {
     ]
     document.addEventListener('onNavigate', ({id}) => {
       console.log("change pages to: ", id);
-      axios.get(`http://etsy-poc-item-info.us-east-2.elasticbeanstalk.com/items/${id}`)
-      // axios.get(`http://localhost:4321/items/${id}`)
+      // axios.get(`http://etsy-poc-item-info.us-east-2.elasticbeanstalk.com/items/${id}`)
+      axios.get(`http://localhost:4321/items/${id}`)
       .then(res=>{
         console.log(res.data);
         this.setState({item: res.data, loading:false});
@@ -88,8 +88,8 @@ class ItemInfoContainer extends React.Component {
   }
 
   componentDidMount(){
-    axios.get('http://etsy-poc-item-info.us-east-2.elasticbeanstalk.com/items/1')
-    // axios.get('http://localhost:4321/items/1')
+    // axios.get('http://etsy-poc-item-info.us-east-2.elasticbeanstalk.com/items/1')
+    axios.get('http://localhost:4321/items/1')
     .then(res=>{
       console.log(res.data);
       this.setState({item: res.data, loading:false});
