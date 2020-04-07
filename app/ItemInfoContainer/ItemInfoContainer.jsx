@@ -49,7 +49,7 @@ class ItemInfoContainer extends React.Component {
       "pricedOptions":[],
       "unpricedOptions":[],
       "customOptions":[],
-      "maxQuantity":"",
+      "maxQuantity":1,
       "inserts-niceChoice":true,
       "inserts-othersWant":true,
       "quickFacts-handmade":true,
@@ -119,7 +119,7 @@ class ItemInfoContainer extends React.Component {
             pricedOptions={this.state.item.pricedOptions || []}
             unpricedOptions={this.state.item.unpricedOptions || []}
             customOptions={this.state.item.customOptions || ''}
-            maxQuantity={this.state.item.maxQuantity || ''}
+            maxQuantity={this.state.item.maxQuantity || 1}
           />
           <ItemInfoOrdering
             inserts={this.state.item.inserts || ['niceChoice', 'othersWant']} />
