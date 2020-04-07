@@ -20,7 +20,12 @@ class ItemInfoPriceOptions extends React.Component{
   }
   
 
-  render(){return (
+  render(){
+    let quantity = [];
+    for (let i = 1; i <= this.props.maxQuantity; i++){
+      quantity.push(i);
+    }
+    return (
     <div className='item-info-price-options'>
 
       {/* price */}
@@ -73,7 +78,7 @@ class ItemInfoPriceOptions extends React.Component{
       <div className="form-group">
         <label>Quantity</label>
         <select className='item-info-quantity form-control'>
-            {[1,2,3,4,5,6,7,8,9,10].map(val=>
+            {quantity.map(val=>
               <option key={val}>{val}</option>
               )}
 
