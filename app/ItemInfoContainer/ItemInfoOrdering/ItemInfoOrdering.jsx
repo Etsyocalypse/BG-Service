@@ -18,7 +18,7 @@ const ItemInfoOrdering = (props)=>{
   
   return (
     <div className='item-info-ordering mb-3'>
-    <button className='add-to-cart btn btn-dark btn-block' style={{borderRadius: "24px"}}>Add To Cart button</button>
+    <button className='add-to-cart btn btn-dark btn-block' style={{borderRadius: "24px"}} onClick={(e)=>props.onAddToCart(e, props.order)} >Add To Cart button</button>
   {props.inserts.map((insert,index)=>(
     <div className='item-order-insert' key={`insert${index}`}>{insertDict[insert]}</div>
   ))}

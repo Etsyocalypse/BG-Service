@@ -62,6 +62,7 @@ class ItemInfoContainer extends React.Component {
       "":""
       },
       loading:true,
+      order:{}
     }
     this.quickFactsDefault = [
       {
@@ -84,7 +85,10 @@ class ItemInfoContainer extends React.Component {
       })
       //change view based off of id
       //setState to render new item
-  });
+    });
+    // document.addEventListener('addToCart', ()=>{
+    //   console.log('add to cart clicked');
+    // });
   }
 
   componentDidMount(){
@@ -94,6 +98,12 @@ class ItemInfoContainer extends React.Component {
       console.log(res.data);
       this.setState({item: res.data, loading:false});
     })
+  }
+
+  onAddToCart(event, order){
+    let addToCartEvent = new Event("addToCart", { bubbles: true });
+    addToCartEvent.order = order;
+    event.target.dispatchEvent(addToCartEvent);
   }
 
   render() {
@@ -122,7 +132,10 @@ class ItemInfoContainer extends React.Component {
             maxQuantity={this.state.item.maxQuantity || 1}
           />
           <ItemInfoOrdering
-            inserts={this.state.item.inserts || ['niceChoice', 'othersWant']} />
+            inserts={this.state.item.inserts || ['niceChoice', 'othersWant']}
+            onAddToCart={this.onAddToCart.bind(this)}
+            order={this.state.order}
+            />
           <ItemInfoDetails
             // quickFactsHandmade={this.state.item['quickFacts-handmade']}
             // quickFactsMaterials={this.state.item['quickFacts-materials']}
