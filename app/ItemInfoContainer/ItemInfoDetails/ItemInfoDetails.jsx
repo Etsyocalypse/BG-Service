@@ -4,21 +4,24 @@ class ItemInfoDetails extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      showMoreDetails: false
+      showMoreDetails: 'truncated'
     };
     this.onClickToggleMore = this.onClickToggleMore.bind(this);
   }
 
   onClickToggleMore() {
-    this.setState(oldState => {
-      if (oldState.showMoreDetails) {
-        $("#moreInfoCollapse").collapse("hide");
-        return { showMoreDetails: false };
-      } else {
-        $("#moreInfoCollapse").collapse("show");
-        return { showMoreDetails: true };
-      }
-    });
+    var css = (this.state.showMoreDetails === "truncated") ? "expanded" : "truncated";
+    this.setState({"showMoreDetails":css});
+    
+    // this.setState(oldState => {
+    //   if (oldState.showMoreDetails) {
+    //     $("#moreInfoCollapse").collapse("hide");
+    //     return { showMoreDetails: false };
+    //   } else {
+    //     $("#moreInfoCollapse").collapse("show");
+    //     return { showMoreDetails: true };
+    //   }
+    // });
   }
 
   render() {
@@ -35,15 +38,17 @@ class ItemInfoDetails extends React.Component{
           Description
         </p>
         <div className="item-info-description">
+          <div className={this.state.showMoreDetails}>
           <p>{this.props.description}</p>
+          </div>
         </div>
-        <div className="collapse" id="moreInfoCollapse">
+        {/* <div className="collapse" id="moreInfoCollapse">
           more here
-        </div>
+        </div> */}
         <button
             className="learn-more btn btn-block btn-showMore mb-3" onClick={this.onClickToggleMore}
           >
-            {this.state.showMoreDetails ? "Less" : "Learn more about this item"}
+            {(this.state.showMoreDetails === 'expanded') ? "Less" : "Learn more about this item"}
           </button>
       </div>
     );

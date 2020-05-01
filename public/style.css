@@ -19,3 +19,23 @@
 .item-info-description{
     overflow-wrap: break-word;
 }
+
+.truncated{
+    min-height: 240px;
+    max-height: 240px;
+    /* min-height: 240px; */
+    overflow: hidden;
+}
+
+/* .truncated:after{
+    opacity: 1;
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    transition: opacity 200ms ease-in;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff);
+    
+} */

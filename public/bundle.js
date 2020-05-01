@@ -30545,7 +30545,7 @@ var ItemInfoContainer = function (_React$Component) {
         "": ""
       },
       loading: true,
-      order: {}
+      order: { itemId: _this.state.item.itemId }
     };
     _this.quickFactsDefault = [{
       type: 'badge',
@@ -30591,6 +30591,11 @@ var ItemInfoContainer = function (_React$Component) {
       addToCartEvent.order = order;
       event.target.dispatchEvent(addToCartEvent);
     }
+
+    // onOptionChange(optionKey, optionValue){
+    //   this.setState({order:{`${optionKey}`: optionValue}});
+    // }
+
   }, {
     key: 'render',
     value: function render() {
@@ -32066,7 +32071,7 @@ var ItemInfoDetails = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (ItemInfoDetails.__proto__ || Object.getPrototypeOf(ItemInfoDetails)).call(this, props));
 
     _this.state = {
-      showMoreDetails: false
+      showMoreDetails: 'truncated'
     };
     _this.onClickToggleMore = _this.onClickToggleMore.bind(_this);
     return _this;
@@ -32075,15 +32080,18 @@ var ItemInfoDetails = function (_React$Component) {
   _createClass(ItemInfoDetails, [{
     key: "onClickToggleMore",
     value: function onClickToggleMore() {
-      this.setState(function (oldState) {
-        if (oldState.showMoreDetails) {
-          $("#moreInfoCollapse").collapse("hide");
-          return { showMoreDetails: false };
-        } else {
-          $("#moreInfoCollapse").collapse("show");
-          return { showMoreDetails: true };
-        }
-      });
+      var css = this.state.showMoreDetails === "truncated" ? "expanded" : "truncated";
+      this.setState({ "showMoreDetails": css });
+
+      // this.setState(oldState => {
+      //   if (oldState.showMoreDetails) {
+      //     $("#moreInfoCollapse").collapse("hide");
+      //     return { showMoreDetails: false };
+      //   } else {
+      //     $("#moreInfoCollapse").collapse("show");
+      //     return { showMoreDetails: true };
+      //   }
+      // });
     }
   }, {
     key: "render",
@@ -32107,22 +32115,21 @@ var ItemInfoDetails = function (_React$Component) {
           "div",
           { className: "item-info-description" },
           _react2.default.createElement(
-            "p",
-            null,
-            this.props.description
+            "div",
+            { className: this.state.showMoreDetails },
+            _react2.default.createElement(
+              "p",
+              null,
+              this.props.description
+            )
           )
-        ),
-        _react2.default.createElement(
-          "div",
-          { className: "collapse", id: "moreInfoCollapse" },
-          "more here"
         ),
         _react2.default.createElement(
           "button",
           {
             className: "learn-more btn btn-block btn-showMore mb-3", onClick: this.onClickToggleMore
           },
-          this.state.showMoreDetails ? "Less" : "Learn more about this item"
+          this.state.showMoreDetails === 'expanded' ? "Less" : "Learn more about this item"
         )
       );
     }

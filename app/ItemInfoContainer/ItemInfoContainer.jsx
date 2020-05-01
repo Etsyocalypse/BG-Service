@@ -62,7 +62,7 @@ class ItemInfoContainer extends React.Component {
       "":""
       },
       loading:true,
-      order:{}
+      order:{itemId: this.state.item.itemId}
     }
     this.quickFactsDefault = [
       {
@@ -105,6 +105,10 @@ class ItemInfoContainer extends React.Component {
     addToCartEvent.order = order;
     event.target.dispatchEvent(addToCartEvent);
   }
+
+  // onOptionChange(optionKey, optionValue){
+  //   this.setState({order:{`${optionKey}`: optionValue}});
+  // }
 
   render() {
     if(this.state.loading){
