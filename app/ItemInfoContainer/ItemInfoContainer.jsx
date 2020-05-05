@@ -62,7 +62,7 @@ class ItemInfoContainer extends React.Component {
       "":""
       },
       loading:true,
-      order:{itemId: this.state.item.itemId}
+      order:{}
     }
     this.quickFactsDefault = [
       {
@@ -96,7 +96,7 @@ class ItemInfoContainer extends React.Component {
     axios.get('http://localhost:4321/items/1')
     .then(res=>{
       console.log(res.data);
-      this.setState({item: res.data, loading:false});
+      this.setState({item: res.data, loading:false, order:{itemId: res.data.itemId}});
     })
   }
 

@@ -30545,7 +30545,7 @@ var ItemInfoContainer = function (_React$Component) {
         "": ""
       },
       loading: true,
-      order: { itemId: _this.state.item.itemId }
+      order: {}
     };
     _this.quickFactsDefault = [{
       type: 'badge',
@@ -30581,7 +30581,7 @@ var ItemInfoContainer = function (_React$Component) {
       // axios.get('http://etsy-poc-item-info.us-east-2.elasticbeanstalk.com/items/1')
       _axios2.default.get('http://localhost:4321/items/1').then(function (res) {
         console.log(res.data);
-        _this2.setState({ item: res.data, loading: false });
+        _this2.setState({ item: res.data, loading: false, order: { itemId: res.data.itemId } });
       });
     }
   }, {
